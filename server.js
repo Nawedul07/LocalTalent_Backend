@@ -9,9 +9,20 @@ connectDB();
 const app = express();
 
 
+// app.use(cors());
+
+// app.use(cors({
+//   origin: "https://your-frontend-url", // (you can put * temporarily or leave blank for now)
+//   credentials: true
+// }));
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://localtalentnawed.vercel.app"
+];
 
 app.use(cors({
-  origin: "*", // (you can put * temporarily or leave blank for now)
+  origin: allowedOrigins,
   credentials: true
 }));
 
