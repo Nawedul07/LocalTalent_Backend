@@ -8,7 +8,13 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+
+
+app.use(cors({
+  origin: "*", // (you can put * temporarily or leave blank for now)
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Auth Routes
